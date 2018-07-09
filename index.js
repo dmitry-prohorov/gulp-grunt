@@ -29,7 +29,7 @@ module.exports = function(gulp, options) {
   for (var name in tasks) {
     if (tasks.hasOwnProperty(name)) {
       var fn = tasks[name];
-      gulp.task(name, fn);
+      gulp.task(name, gulp.series(fn));
     }
   }
 };
